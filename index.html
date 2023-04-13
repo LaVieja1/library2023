@@ -15,9 +15,9 @@
             <p>Donde poder ver tu historial de libros leídos o por leer</p>
             <p><a href="https://github.com/LaVieja1">Santiago Cano 2023</a></p>
         </header>
-        <form action="#" method="post">Título
-            <label for="book">
-                <input type="text" name="book" id="book" required>
+        <form action="#" method="post" id="form">Título
+            <label for="title">
+                <input type="text" name="title" id="title" required>
             </label>
             <label for="author">Autor
                 <input type="text" name="author" id="author" required>
@@ -28,6 +28,7 @@
             <label for="read">¿Leído?
                 <input type="checkbox" name="read" id="read">
             </label>
+            <button type="submit" id="submit">Agregar</button>
         </form>
         <table>
             <thead>
