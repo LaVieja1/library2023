@@ -25,7 +25,8 @@ function Book(title, author, pages, read) {
 // Events Listeners
 
 submitInput.addEventListener('click', () => {
-    return addBookToLibrary();
+    addBookToLibrary();
+    updateTable();
 })
 
 // Funciones
