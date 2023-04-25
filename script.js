@@ -40,13 +40,15 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
 }
 
+
 function getReadValue() {
-    if (form.querySelector('input[name="read"]:checked').value == 'yes') {
-        return true;
+    if (form.querySelector('input[name="read"]:checked')) {
+        return "read";
     } else {
-        return false;
+        return "not read";
     }
 }
+
 
 function updateTable() {
     tableBody.innerHTML = '';
