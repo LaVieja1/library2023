@@ -20,6 +20,115 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    padding: 200px;
+    gap: 80px;
+    padding: 160px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+a {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    flex-wrap: wrap;
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+form label input {
+    height: 24px;
+    width: 200px;
+    min-width: 100px;
+    border: 1px solid rgb(151, 151, 160);
+    border-radius: 2px;
+}
+
+form label #pages {
+    max-width: 80px;
+}
+
+form label #read {
+    height: 24px;
+    width: 24px;
+}
+
+#submit {
+    padding: 8px 10px;
+    background-color: rgb(125, 194, 218);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: grab;
+}
+
+#submit:hover {
+    transform: scale(1.1);
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+th {
+    height: 60px;
+}
+
+td {
+    height: 50px;
+}
+
+th, td {
+    padding: 8px 22px;
+    border-bottom: 1px solid #ddd;
+}
+
+.read-button {
+    padding: 6px 12px;
+    cursor: grab;
+    border-radius: 4px;
+}
+
+.read-button:hover {
+    transform: scale(1.1);
+}
+
+#delete {
+    padding: 6px 12px;
+    cursor: grab;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+#delete:hover {
+    transform: scale(1.1);
 }
