@@ -22,16 +22,18 @@ const submitInput = document.querySelector('#submit');
 
 const tableBody = document.querySelector('#book-table');
 
-const btnDelete = document.querySelector('#delete');
-
 // Events Listeners
 
 const table = document
     .querySelector("table")
     .addEventListener('click', (e) => {
-        const currentTarget = e.target.parentNode.parentNode.childNodes[1];
-        if (e.target.innerHTML == 'borrar') {
-            deleteBook(currentTarget.dataset.indexNumber);
+        const btnDelete = e.target.parentNode.parentNode.childNodes[1];
+        const btnRead = e.target.parentNode.childNodes[0];
+        if (e.target.innerHTML == 'Borrar') {
+            deleteBook(btnDelete.dataset.indexNumber);
+        }
+        if (e.target.classList.contains("read-button")) {
+            changeStatus(btnRead.dataset.indexNumber);
         }
         updateTable();
     });
@@ -53,8 +55,8 @@ function updateTable() {
             <td>${book.title}</td>
             <td>${book.author}</td>
             <td>${book.pages}</td>
-            <td><button class="read-button">${book.read}</td>
-            <td><button id="delete" data-index-number=${i}>borrar</button></td>
+            <td><button class="read-button" data-index-number=${i}>${book.read}</td>
+            <td><button id="delete" data-index-number=${i}>Borrar</button></td>
         </tr>
         `;
         tableBody.insertAdjacentHTML("afterbegin", htmlBook);
@@ -74,9 +76,9 @@ function addBookToLibrary() {
 
 function getReadValue() {
     if (form.querySelector('input[name="read"]:checked')) {
-        return "read";
+        return "Leído";
     } else {
-        return "not read";
+        return "No leído";
     }
 }
 
@@ -84,8 +86,14 @@ function deleteBook(currentBook) {
     myLibrary.splice(currentBook, 1);
 }
 
+function changeStatus(book) {
+    if(myLibrary[book].read === 'Leído') {
+        myLibrary[book].read = 'No Leído';
+    } else myLibrary[book].read = 'Leído';
+}
+
 // Test
 
-let testBook = new Book("Harry Potter y la Piedra filosofal", "JK Rowling", 500, "read");
+let testBook = new Book("Harry Potter y la Piedra filosofal", "JK Rowling", 500, "Leído");
 myLibrary.push(testBook);
 updateTable();
