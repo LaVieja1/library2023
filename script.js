@@ -65,6 +65,11 @@ function updateTable() {
 }
 
 function addBookToLibrary() {
+    if (titleInput.value.length === 0 || authorInput.value.length === 0) {
+        alert('Por favor, llenar los campos obligatorios');
+        return;
+    }
+
     let title = titleInput.value;
     let author = authorInput.value;
     let pages = pagesInput.value;
